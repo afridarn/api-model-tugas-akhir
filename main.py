@@ -31,7 +31,9 @@ async def classify_image(model, file):
     classes = ['aedes', 'culex']
     class_name = classes[np.argmax(score)]
     confidence_score = float(score[np.argmax(score)])
+    print(f"Predictions: {predictions}")
     print(f"Score: {score}")
+    print(f"Confidence Score: {confidence_score}")
 
     return {"result": class_name, "score": confidence_score}
 
